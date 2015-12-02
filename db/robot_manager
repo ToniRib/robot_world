@@ -7,7 +7,7 @@ robots:
   avatar: https://robohash.org/jfieisisus
   birthdate: '2015-10-12'
   hired_on: '2015-12-01'
-  department: male
+  department: service
 - id: 2
   name: Sam
   city: Phoenix
@@ -15,7 +15,7 @@ robots:
   avatar: https://robohash.org/jfieis
   birthdate: '2015-03-04'
   hired_on: '2015-09-09'
-  department: female
+  department: transportation
 - id: 3
   name: Darrel
   city: Minneapolis
@@ -23,5 +23,5 @@ robots:
   avatar: https://robohash.org/jfieisjvhfhhf
   birthdate: '2015-01-05'
   hired_on: '2015-03-16'
-  department: male
+  department: service
 total: 3
