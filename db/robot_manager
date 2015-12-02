@@ -1,13 +1,5 @@
 ---
 robots:
-- id: 3
-  name: Darrel the stupid
-  city: Minneapolis
-  state: MN
-  avatar: https://robohash.org/jfieisjvhfhhf
-  birthdate: '2015-01-05'
-  hired_on: '2015-03-16'
-  department: service
 - id: 4
   name: Spatacus
   city: Denver
@@ -16,4 +8,12 @@ robots:
   birthdate: '2013-06-12'
   hired_on: '2014-01-06'
   department: service
-total: 4
+- id: 5
+  name: Bender
+  city: New York
+  state: NY
+  avatar: https://robohash.org/bender
+  birthdate: '2014-09-18'
+  hired_on: '2015-02-09'
+  department: service
+total: 5
