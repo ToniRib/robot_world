@@ -16,6 +16,7 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2015.1120)
     mini_portile2 (2.0.0)
+    minitest (5.8.3)
     nokogiri (1.6.7)
       mini_portile2 (~> 2.0.0.rc2)
     pry (0.10.3)
@@ -45,6 +46,7 @@ PLATFORMS
 DEPENDENCIES
   capybara
   launchy
+  minitest
   pry
   rake
   shotgun
