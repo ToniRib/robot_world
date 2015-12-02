@@ -25,4 +25,9 @@ class RobotManagerApp < Sinatra::Base
     @robot = RobotManager.find(id.to_i)
     erb :show
   end
+
+  get '/robots/:id/edit' do |id|
+    @robot = RobotManager.find(id.to_i)
+    erb :edit
+  end
 end
