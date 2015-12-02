@@ -1,3 +1,9 @@
+body,
+html {
+  font-family: 'Play', sans-serif;
+}
+
+
 .card-dashboard {
   height: 140px;
 }
