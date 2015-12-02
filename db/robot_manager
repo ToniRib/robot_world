@@ -16,4 +16,12 @@ robots:
   birthdate: '2015-03-04'
   hired_on: '2015-09-09'
   department: female
-total: 2
+- id: 3
+  name: Darrel
+  city: Minneapolis
+  state: MN
+  avatar: https://robohash.org/jfieisjvhfhhf
+  birthdate: '2015-01-05'
+  hired_on: '2015-03-16'
+  department: male
+total: 3

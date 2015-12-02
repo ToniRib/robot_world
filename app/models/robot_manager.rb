@@ -16,7 +16,7 @@ class RobotManager
                               'city'       => robot[:city],
                               'state'      => robot[:state],
                               'avatar'     => robot[:avatar],
-                              'birthdate'   => robot[:birthdate],
+                              'birthdate'  => robot[:birthdate],
                               'hired_on'   => robot[:hired_on],
                               'department' => robot[:department]
                             }
@@ -38,6 +38,7 @@ class RobotManager
   end
 
   def self.find(id)
+    puts "robot id is #{id}"
     Robot.new(raw_robot(id))
   end
 end

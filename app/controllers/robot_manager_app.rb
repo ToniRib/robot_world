@@ -20,4 +20,9 @@ class RobotManagerApp < Sinatra::Base
     RobotManager.create(params[:robot])
     redirect '/robots'
   end
+
+  get '/robots/:id' do |id|
+    @robot = RobotManager.find(id.to_i)
+    erb :show
+  end
 end

@@ -1,5 +1,6 @@
 class Robot
-  attr_reader :name,
+  attr_reader :id,
+              :name,
               :city,
               :state,
               :avatar,
@@ -8,6 +9,7 @@ class Robot
               :department
 
   def initialize(data)
+    @id         = data['id']
     @name       = data['name']
     @city       = data['city']
     @state      = data['state']
