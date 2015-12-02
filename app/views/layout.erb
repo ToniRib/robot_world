@@ -18,7 +18,13 @@
       <nav class="blue-grey darken-4">
         <div class="nav-wrapper">
           <a href="/" class="brand-logo teal-text text-accent-2">Robot World</a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
+            <li><a class="teal-text text-accent-2" href="/">Dashboard</a></li>
+            <li><a  class="teal-text text-accent-2" href="/robots">Robot Index</a></li>
+            <li><a  class="teal-text text-accent-2" href="/robots/new">Register Robot</a></li>
+          </ul>
+          <ul class="side-nav" id="mobile-demo">
             <li><a class="teal-text text-accent-2" href="/">Dashboard</a></li>
             <li><a  class="teal-text text-accent-2" href="/robots">Robot Index</a></li>
             <li><a  class="teal-text text-accent-2" href="/robots/new">Register Robot</a></li>
@@ -32,5 +38,11 @@
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="/js/materialize.min.js"></script>
+
+    <script type="text/javascript">
+      $( document ).ready(function(){
+        $(".button-collapse").sideNav();
+      });
+    </script>
   </body>
 </html>
