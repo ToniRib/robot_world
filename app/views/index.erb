@@ -4,4 +4,8 @@
   <a href="/robots/<%= robot.id %>"><h3><%= robot.name %></h3></a>
   <p><%= robot.birthdate %></p>
   <a href="/robots/<%= robot.id %>/edit">Edit Robot</a>
+  <form action="/robots/<%= robot.id %>" method="POST">
+    <input type="hidden" name="_method" value="DELETE"/>
+    <input class="hover-submit" type="submit" value="delete"/>
+  </form>
 <% end %>
