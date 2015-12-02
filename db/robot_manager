@@ -16,4 +16,12 @@ robots:
   birthdate: '2014-09-18'
   hired_on: '2015-02-09'
   department: service
-total: 5
+- id: 6
+  name: Samwise
+  city: Los Angeles
+  state: CA
+  avatar: https://robohash.org/zzyzx
+  birthdate: '2015-03-05'
+  hired_on: '2015-07-02'
+  department: service
+total: 6
