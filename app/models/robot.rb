@@ -18,4 +18,8 @@ class Robot
     @hired_on   = data['hired_on']
     @department = data['department']
   end
+
+  def age
+    # calculate an age here
+  end
 end
