@@ -1,4 +1,5 @@
 require 'yaml/store'
+require_relative 'robot'
 
 class RobotManager
   def self.database
@@ -15,10 +16,28 @@ class RobotManager
                               'city'       => robot[:city],
                               'state'      => robot[:state],
                               'avatar'     => robot[:avatar],
-                              'birthday'   => robot[:birthdate],
+                              'birthdate'   => robot[:birthdate],
                               'hired_on'   => robot[:hired_on],
                               'department' => robot[:department]
                             }
     end
+  end
+
+  def self.raw_robots
+    database.transaction do
+      database['robots'] || []
+    end
+  end
+
+  def self.all
+    raw_robots.map { |data| Robot.new(data) }
+  end
+
+  def self.raw_robot(id)
+    raw_robots.find { |robot| robot['id'] == id }
+  end
+
+  def self.find(id)
+    Robot.new(raw_robot(id))
   end
 end

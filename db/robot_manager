@@ -5,7 +5,15 @@ robots:
   city: Denver
   state: CO
   avatar: https://robohash.org/jfieisisus
-  birthday: '2015-10-12'
+  birthdate: '2015-10-12'
   hired_on: '2015-12-01'
   department: male
-total: 1
+- id: 2
+  name: Sam
+  city: Phoenix
+  state: AZ
+  avatar: https://robohash.org/jfieis
+  birthdate: '2015-03-04'
+  hired_on: '2015-09-09'
+  department: female
+total: 2
