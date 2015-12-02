@@ -6,4 +6,12 @@ class RobotManagerApp < Sinatra::Base
   get '/' do
     erb :dashboard
   end
+
+  get '/robots' do
+    erb :index
+  end
+
+  get '/robots/new' do
+    erb :new
+  end
 end
