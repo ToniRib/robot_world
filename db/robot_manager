@@ -8,4 +8,12 @@ robots:
   birthdate: '2015-01-05'
   hired_on: '2015-03-16'
   department: service
-total: 3
+- id: 4
+  name: Spatacus
+  city: Denver
+  state: CO
+  avatar: https://robohash.org/pppp
+  birthdate: '2013-06-12'
+  hired_on: '2014-01-06'
+  department: service
+total: 4
