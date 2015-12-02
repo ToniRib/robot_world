@@ -1,7 +1,7 @@
 ---
 robots:
 - id: 1
-  name: Patrick
+  name: Patrick the wonderful
   city: Denver
   state: CO
   avatar: https://robohash.org/jfieisisus
@@ -9,7 +9,7 @@ robots:
   hired_on: '2015-12-01'
   department: service
 - id: 2
-  name: Sam
+  name: Sam the great
   city: Phoenix
   state: AZ
   avatar: https://robohash.org/jfieis

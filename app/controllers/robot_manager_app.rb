@@ -31,4 +31,9 @@ class RobotManagerApp < Sinatra::Base
     @robot = RobotManager.find(id.to_i)
     erb :edit
   end
+
+  put '/robots/:id' do |id|
+    RobotManager.update(id.to_i, params[:robot])
+    redirect "/robots/#{id}"
+  end
 end
