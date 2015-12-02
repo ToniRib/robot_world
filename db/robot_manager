@@ -1,0 +1,11 @@
+---
+robots:
+- id: 1
+  name: Patrick
+  city: Denver
+  state: CO
+  avatar: https://robohash.org/jfieisisus
+  birthday: '2015-10-12'
+  hired_on: '2015-12-01'
+  department: male
+total: 1

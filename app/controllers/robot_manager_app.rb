@@ -1,4 +1,4 @@
-# require 'models/robot_manager'
+require 'models/robot_manager'
 
 class RobotManagerApp < Sinatra::Base
   set :root, File.expand_path("..", __dir__)
@@ -13,5 +13,10 @@ class RobotManagerApp < Sinatra::Base
 
   get '/robots/new' do
     erb :new
+  end
+
+  post '/robots' do
+    RobotManager.create(params[:robot])
+    redirect '/robots'
   end
 end
