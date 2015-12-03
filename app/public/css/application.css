@@ -11,3 +11,9 @@ html {
 .card-dashboard {
   height: 140px;
 }
+
+[type="radio"]:not(:checked), [type="radio"]:checked {
+  position: relative;
+  left: 0;
+  visibility: visible;
+}
