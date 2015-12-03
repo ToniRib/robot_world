@@ -122,4 +122,14 @@ class RobotManagerTest < Minitest::Test
     assert_equal '2015-1-20', robot.hired_on
     assert_equal 'service', robot.department
   end
+
+  def test_it_deletes_a_robot
+    create_three_robots
+
+    assert_equal 3, RobotManager.all.count
+
+    RobotManager.delete(2)
+
+    assert_equal 2, RobotManager.all.count
+  end
 end
