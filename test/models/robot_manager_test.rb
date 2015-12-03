@@ -12,7 +12,7 @@ class RobotManagerTest < Minitest::Test
                 :hired_on    => '2015-1-1',
                 :department  => 'service'
               },
-              { 'id'         => 1,
+              { 'id'         => 2,
                 :name        => 'Robot2',
                 :city        => 'City2',
                 :state       => 'State2',
@@ -21,7 +21,7 @@ class RobotManagerTest < Minitest::Test
                 :hired_on    => '2015-1-2',
                 :department  => 'transportation'
               },
-              { 'id'         => 1,
+              { 'id'         => 3,
                 :name        => 'Robot3',
                 :city        => 'City3',
                 :state       => 'State3',
@@ -84,6 +84,17 @@ class RobotManagerTest < Minitest::Test
   end
 
   def test_it_finds_a_specific_robot
+    create_three_robots
 
+    robot = RobotManager.find(2)
+
+    assert_equal 2, robot.id
+    assert_equal 'Robot2', robot.name
+    assert_equal 'City2', robot.city
+    assert_equal 'State2', robot.state
+    assert_equal 'https://robohash.org/robot2', robot.avatar
+    assert_equal '2014-09-2', robot.birthdate
+    assert_equal '2015-1-2', robot.hired_on
+    assert_equal 'transportation', robot.department
   end
 end
