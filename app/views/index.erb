@@ -15,7 +15,7 @@
           </div>
           <div class="card-action">
             <a class="cyan-text text-accent-2" href="/robots/<%= robot.id %>/edit">Edit Robot</a>
-            <form action="/robots/<%= robot.id %>" method="POST">
+            <form class="inline-form" action="/robots/<%= robot.id %>" method="POST">
               <input type="hidden" name="_method" value="DELETE"/>
               <input class="hover-submit btn-flat cyan-text text-accent-2" type="submit" value="delete"/>
             </form>

@@ -3,6 +3,10 @@ html {
   font-family: 'Play', sans-serif;
 }
 
+.inline-form {
+  display: inline;
+}
+
 
 .card-dashboard {
   height: 140px;
