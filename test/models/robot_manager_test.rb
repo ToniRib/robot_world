@@ -97,4 +97,29 @@ class RobotManagerTest < Minitest::Test
     assert_equal '2015-1-2', robot.hired_on
     assert_equal 'transportation', robot.department
   end
+
+  def test_it_updates_a_specific_robot
+    create_three_robots
+
+    new_data = { :name        => 'Robot2_v2',
+                 :city        => 'City2_v2',
+                 :state       => 'State2_v2',
+                 :avatar      => 'https://robohash.org/robot2_v2',
+                 :birthdate   => '2014-09-20',
+                 :hired_on    => '2015-1-20',
+                 :department  => 'service'
+    }
+    RobotManager.update(2, new_data)
+
+    robot = RobotManager.find(2)
+
+    assert_equal 2, robot.id
+    assert_equal 'Robot2_v2', robot.name
+    assert_equal 'City2_v2', robot.city
+    assert_equal 'State2_v2', robot.state
+    assert_equal 'https://robohash.org/robot2_v2', robot.avatar
+    assert_equal '2014-09-20', robot.birthdate
+    assert_equal '2015-1-20', robot.hired_on
+    assert_equal 'service', robot.department
+  end
 end
