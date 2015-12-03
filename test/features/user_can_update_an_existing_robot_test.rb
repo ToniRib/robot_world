@@ -2,9 +2,7 @@ require_relative '../test_helper'
 
 class UserCanRegisterANewRobotTest < FeatureTest
   def test_user_registers_a_new_robot_with_correct_attributes
-    skip
-    RobotManager.create({ 'id'         => 1,
-                          :name        => 'Frank',
+    RobotManager.create({ :name        => 'Frank',
                           :city        => 'Denver',
                           :state       => 'CO',
                           :avatar      => 'https://robohash.org/bluerobot',
@@ -13,13 +11,13 @@ class UserCanRegisterANewRobotTest < FeatureTest
                           :department  => 'service'
                         })
 
-    visit '/robots/1/edit'
+    visit "/robots/#{RobotManager.all.last.id}/edit"
 
     fill_in 'robot[name]', with: 'Frank_v2'
 
     click_button 'Submit'
 
-    assert_equal '/robots/1', current_path
+    assert_equal "/robots/#{RobotManager.all.last.id}", current_path
 
     within 'h1' do
       assert page.has_content?('Frank_v2')

@@ -2,9 +2,7 @@ require_relative '../test_helper'
 
 class UserCanViewAnExistingRobotsInfoTest < FeatureTest
   def test_user_sees_robots_current_information
-    skip
-    RobotManager.create({ 'id'         => 1,
-                          :name        => 'Frank',
+    RobotManager.create({ :name        => 'Frank',
                           :city        => 'Denver',
                           :state       => 'CO',
                           :avatar      => 'https://robohash.org/bluerobot',
@@ -13,7 +11,7 @@ class UserCanViewAnExistingRobotsInfoTest < FeatureTest
                           :department  => 'service'
                         })
 
-    visit '/robots/1'
+    visit "/robots/#{RobotManager.all.last.id}"
 
     within 'header' do
       assert page.has_content?('Frank')

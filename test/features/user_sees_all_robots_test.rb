@@ -2,9 +2,7 @@ require_relative '../test_helper'
 
 class UserSeesAllRobotsTest < FeatureTest
   def test_user_sees_index_of_robots
-    skip
-    RobotManager.create({ 'id'         => 1,
-                          :name        => 'Frank',
+    RobotManager.create({ :name        => 'Frank',
                           :city        => 'Denver',
                           :state       => 'CO',
                           :avatar      => 'https://robohash.org/bluerobot',
