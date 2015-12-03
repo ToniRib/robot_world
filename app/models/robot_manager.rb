@@ -42,7 +42,6 @@ class RobotManager
   end
 
   def self.find(id)
-    puts "robot id is #{id}"
     Robot.new(raw_robot(id))
   end
 

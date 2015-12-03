@@ -2,6 +2,39 @@ require_relative '../test_helper'
 require 'pry'
 
 class RobotManagerTest < Minitest::Test
+  def create_three_robots
+    robots = [{ 'id'         => 1,
+                :name        => 'Robot1',
+                :city        => 'City1',
+                :state       => 'State1',
+                :avatar      => 'https://robohash.org/robot1',
+                :birthdate   => '2014-09-1',
+                :hired_on    => '2015-1-1',
+                :department  => 'service'
+              },
+              { 'id'         => 1,
+                :name        => 'Robot2',
+                :city        => 'City2',
+                :state       => 'State2',
+                :avatar      => 'https://robohash.org/robot2',
+                :birthdate   => '2014-09-2',
+                :hired_on    => '2015-1-2',
+                :department  => 'transportation'
+              },
+              { 'id'         => 1,
+                :name        => 'Robot3',
+                :city        => 'City3',
+                :state       => 'State3',
+                :avatar      => 'https://robohash.org/robot3',
+                :birthdate   => '2014-09-3',
+                :hired_on    => '2015-1-3',
+                :department  => 'service'
+              }
+    ]
+
+    robots.each { |robot| RobotManager.create(robot) }
+  end
+
   def test_it_creates_a_robot
     RobotManager.create({ 'id'         => 1,
                           :name        => 'Frank',
@@ -23,5 +56,34 @@ class RobotManagerTest < Minitest::Test
     assert_equal '2014-09-18', robot.birthdate
     assert_equal '2015-1-10', robot.hired_on
     assert_equal 'service', robot.department
+  end
+
+  def test_it_finds_all_robots_in_database
+    create_three_robots
+
+    assert_equal 3, RobotManager.all.count
+
+    i = 1
+    RobotManager.all.each do |robot|
+      assert_equal Robot, robot.class
+      assert_equal i, robot.id
+      assert_equal "Robot#{i}", robot.name
+      assert_equal "City#{i}", robot.city
+      assert_equal "State#{i}", robot.state
+      assert_equal "https://robohash.org/robot#{i}", robot.avatar
+      assert_equal "2014-09-#{i}", robot.birthdate
+      assert_equal "2015-1-#{i}", robot.hired_on
+      if i != 2
+        assert_equal 'service', robot.department
+      else
+        assert_equal 'transportation', robot.department
+      end
+
+      i += 1
+    end
+  end
+
+  def test_it_finds_a_specific_robot
+
   end
 end
