@@ -2,6 +2,7 @@ require_relative '../test_helper'
 
 class UserCanRegisterANewRobotTest < FeatureTest
   def test_user_registers_a_new_robot_with_correct_attributes
+    skip
     RobotManager.create({ 'id'         => 1,
                           :name        => 'Frank',
                           :city        => 'Denver',

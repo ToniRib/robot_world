@@ -2,6 +2,7 @@ require_relative '../test_helper'
 
 class UserCanDeleteARobotTest < FeatureTest
   def test_user_deletes_an_existing_robot
+    skip
     RobotManager.create({ 'id'         => 1,
                           :name        => 'Frank',
                           :city        => 'Denver',

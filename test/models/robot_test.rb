@@ -2,6 +2,7 @@ require_relative '../test_helper'
 
 class RobotTest < Minitest::Test
   def test_assigns_attributes_correctly
+    skip
     robot = Robot.new({ 'id'         => 1,
                         'name'       => 'Frank',
                         'city'       => 'Denver',

@@ -2,6 +2,7 @@ require_relative '../test_helper'
 
 class UserCanViewAnExistingRobotsInfoTest < FeatureTest
   def test_user_sees_robots_current_information
+    skip
     RobotManager.create({ 'id'         => 1,
                           :name        => 'Frank',
                           :city        => 'Denver',

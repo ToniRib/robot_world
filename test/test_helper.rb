@@ -5,9 +5,15 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require 'capybara'
 
+DatabaseCleaner[:sequel, {:connection => Sequel.sqlite("db/robot_manager_test.sqlite3")}].strategy = :truncation
+
 class Minitest::Test
+  def setup
+    DatabaseCleaner.start
+  end
+
   def teardown
-    RobotManager.delete_all
+    DatabaseCleaner.clean
   end
 end
 
