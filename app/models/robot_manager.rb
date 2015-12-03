@@ -6,7 +6,7 @@ class RobotManager
     if ENV['RACK_ENV'] == 'test'
       @database ||= Sequel.sqlite('db/robot_manager_test.sqlite3')
     else
-      @database ||= Sequel.sqlite('db/robot_manager.sqlite3')
+      @database ||= Sequel.sqlite('db/robot_manager_development.sqlite3')
     end
   end
 
