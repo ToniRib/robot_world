@@ -55,7 +55,6 @@ class RobotManagerTest < Minitest::Test
   end
 
   def test_it_finds_all_robots_in_database
-    skip
     create_three_robots
 
     assert_equal 3, RobotManager.all.count
@@ -63,7 +62,6 @@ class RobotManagerTest < Minitest::Test
     i = 1
     RobotManager.all.each do |robot|
       assert_equal Robot, robot.class
-      assert_equal i, robot.id
       assert_equal "Robot#{i}", robot.name
       assert_equal "City#{i}", robot.city
       assert_equal "State#{i}", robot.state
@@ -81,12 +79,12 @@ class RobotManagerTest < Minitest::Test
   end
 
   def test_it_finds_a_specific_robot
-    skip
     create_three_robots
 
-    robot = RobotManager.find(2)
+    target_id = RobotManager.all[1].id
+    robot = RobotManager.find(target_id)
 
-    assert_equal 2, robot.id
+    assert_equal target_id, robot.id
     assert_equal 'Robot2', robot.name
     assert_equal 'City2', robot.city
     assert_equal 'State2', robot.state
@@ -97,7 +95,6 @@ class RobotManagerTest < Minitest::Test
   end
 
   def test_it_updates_a_specific_robot
-    skip
     create_three_robots
 
     new_data = { :name        => 'Robot2_v2',
@@ -108,11 +105,13 @@ class RobotManagerTest < Minitest::Test
                  :hired_on    => '2015-1-20',
                  :department  => 'service'
     }
-    RobotManager.update(2, new_data)
 
-    robot = RobotManager.find(2)
+    target_id = RobotManager.all[1].id
+    RobotManager.update(target_id, new_data)
 
-    assert_equal 2, robot.id
+    robot = RobotManager.find(target_id)
+
+    assert_equal target_id, robot.id
     assert_equal 'Robot2_v2', robot.name
     assert_equal 'City2_v2', robot.city
     assert_equal 'State2_v2', robot.state
@@ -123,12 +122,12 @@ class RobotManagerTest < Minitest::Test
   end
 
   def test_it_deletes_a_robot
-    skip
     create_three_robots
 
     assert_equal 3, RobotManager.all.count
 
-    RobotManager.delete(2)
+    target_id = RobotManager.all[1].id
+    RobotManager.delete(target_id)
 
     assert_equal 2, RobotManager.all.count
   end
