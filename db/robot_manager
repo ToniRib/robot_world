@@ -24,4 +24,12 @@ robots:
   birthdate: '2015-03-05'
   hired_on: '2015-07-02'
   department: service
-total: 6
+- id: 7
+  name: Billy Bob
+  city: Denver
+  state: CO
+  avatar: https://robohash.org/benjfjff
+  birthdate: '2015-07-01'
+  hired_on: '2015-09-10'
+  department: service
+total: 7

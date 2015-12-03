@@ -1,4 +1,5 @@
 require 'yaml/store'
+require 'pry'
 
 class RobotManager
   def self.database
@@ -34,6 +35,14 @@ class RobotManager
 
   def self.all
     raw_robots.map { |data| Robot.new(data) }
+  end
+
+  def self.sort_by_location
+    location_count = {}
+    all.group_by { |robot| robot.city }.each do |i|
+      location_count[i[0]] = i[1].count
+    end
+    location_count
   end
 
   def self.raw_robot(id)
