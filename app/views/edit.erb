@@ -50,16 +50,16 @@
       <div class="input-field col s6 m6 l6 white">
         Department:
         <% if @robot.department == 'service' %>
-          <input type="radio" name="robot[department]" value="service" checked> Service
-          <input type="radio" name="robot[department]" value="transportation"> Transportation
+          <input type="radio" name="robot[department]" id="Service" value="service" checked> Service
+          <input type="radio" name="robot[department]" id="Transporation" value="transportation"> Transportation
         <% else %>
-          <input type="radio" name="robot[department]" value="service"> Service
-          <input type="radio" name="robot[department]" value="transportation" checked> Transportation
+          <input type="radio" name="robot[department]" id="Service" value="service"> Service
+          <input type="radio" name="robot[department]" id="Transporation" value="transportation" checked> Transportation
         <% end %>
       </div>
     </div>
 
-    <button class="btn waves-effect waves-light" type="submit" name="action">Save Updates
+    <button class="btn waves-effect waves-light" value="Submit" type="submit" name="action">Save Updates
       <i class="material-icons right">send</i>
     </button>
 
