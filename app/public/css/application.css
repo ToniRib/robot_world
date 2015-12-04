@@ -12,7 +12,15 @@ html {
   height: 140px;
 }
 
-[type="radio"]:not(:checked), [type="radio"]:checked {
+[type="radio"]:not(:checked),
+[type="radio"]:checked {
+  position: relative;
+  left: 0;
+  visibility: visible;
+}
+
+.radio-btn {
+  margin: 0 10px;
   position: relative;
   left: 0;
   visibility: visible;
