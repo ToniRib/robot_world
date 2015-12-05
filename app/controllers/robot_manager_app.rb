@@ -3,7 +3,7 @@ class RobotManagerApp < Sinatra::Base
   set :method_override, true
 
   get '/' do
-    erb :dashboard
+    haml :dashboard
   end
 
   get '/robots' do
@@ -22,12 +22,12 @@ class RobotManagerApp < Sinatra::Base
 
   get '/robots/:id' do |id|
     @robot = RobotManager.find(id.to_i)
-    erb :show
+    haml :show
   end
 
   get '/robots/:id/edit' do |id|
     @robot = RobotManager.find(id.to_i)
-    erb :edit
+    haml :edit
   end
 
   put '/robots/:id' do |id|

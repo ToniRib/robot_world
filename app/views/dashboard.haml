@@ -1,0 +1,39 @@
+.container
+  %header.row
+    .col.s12.m12.l12
+      %h1.center-align.teal-text.text-accent-2
+        %b Main Dashboard
+  %article.row
+    %section.col.s12.m6.l6
+      %a{:href => "/robots"}
+        .card.cyan.darken-1.card-dashboard
+          .card-content.white-text.center-align
+            %h2.card-title View All Robots
+    %section.col.s12.m6.l6
+      %a{:href => "/robots/new"}
+        .card.cyan.darken-1.card-dashboard
+          .card-content.white-text.center-align
+            %h2.card-title Register a Robot
+  %hr
+    .row
+      .col.s12.m12.l12
+        %h2.center-align.teal-text.text-accent-2 Statistics
+    %article.row
+      %section.col.s12.m4.l4
+        .card
+          .card-image
+            = column_chart RobotManager.sort_by_department, height: "400px", library: {backgroundColor: "#000"}
+          .card-content.cyan.darken-3
+            %p.white-text Robots by Department
+      %section.col.s12.m4.l4
+        .card
+          .card-image
+            = column_chart RobotManager.sort_by_year, height: "400px", library: {backgroundColor: "#000"}
+          .card-content.cyan.darken-3
+            %p.white-text Robots by Year Hired
+      %section.col.s12.m4.l4
+        .card
+          .card-image
+            = column_chart RobotManager.sort_by_location, height: "400px", library: {backgroundColor: "#000"}
+          .card-content.cyan.darken-3
+            %p.white-text Robots by Location
