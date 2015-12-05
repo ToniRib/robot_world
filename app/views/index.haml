@@ -7,6 +7,12 @@
       .col.s12.m12.l12
         .card.blue-grey.darken-1
           .card-content.white-text
-            %p.light-blue-text.text-accent-3 Location:
+            %a.green-text.text-accent-2{:href => "/robots/#{robot.id}"}
+              %span.card-title= robot.name
+            %p.light-blue-text.text-accent-3
+              Location: #{robot.city}, #{robot.state}
           .card-action
-            %p link and form will go here
+            %a.cyan-text.text-accent-2{:href => "/robots/#{robot.id}/edit"} Edit Robot
+            %form.inline-form{:action => "/robots/#{robot.id}", :method => "POST"}
+              %input{:name => "_method", :type => "hidden", :value => "DELETE"}/
+              %input.hover-submit.btn-flat.cyan-text.text-accent-2{:type => "submit", :value => "delete"}/
