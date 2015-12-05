@@ -25,6 +25,18 @@ class RobotManagerApp < Sinatra::Base
     haml :show
   end
 
+  get '/robots/:id/pdf' do |id|
+    robot = RobotManager.find(id.to_i)
+    Prawn::Document.generate("#{robot.name}_information.pdf") do
+      text "Robot Information for: #{robot.name}"
+      text "Location: #{robot.city}, #{robot.state}"
+      text "Birthdate: #{robot.birthdate}"
+      text "Hired on: #{robot.hired_on}"
+      text "Department: #{robot.department}"
+    end
+    redirect "/robots/#{id}"
+  end
+
   get '/robots/:id/edit' do |id|
     @robot = RobotManager.find(id.to_i)
     haml :edit
