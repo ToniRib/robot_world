@@ -39,7 +39,7 @@
     <section class="col s12 m4 l4">
       <div class="card">
         <div class="card-image">
-          <img src="/images/color_wash.JPG">
+          <%= column_chart RobotManager.group_by_hour_of_day(:created_at, format: "%l %P").count %>
           <span class="card-title">Average Robot Age</span>
         </div>
         <div class="card-content cyan darken-3">
