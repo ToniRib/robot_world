@@ -1,0 +1,50 @@
+.container
+  %header.row
+    .col.s12.m12.l12.center-align
+      %h1.cyan-text.text-accent-2 Edit a Robot
+  %form.col.s12.m12.l12.cyan-text{:action => "/robots/#{@robot.id}", :method => "post"}
+    %input{:name => "_method", :type => "hidden", :value => "PUT"}
+      .row
+        .input-field.col.s12.m12.l12
+          %input#name{:name => "robot[name]", :type => "text", :value => @robot.name}/
+          %br/
+          %label{:for => "name"} Name
+      .row
+        .input-field.col.s12.m6.l6
+          %input#city{:name => "robot[city]", :type => "text", :value => @robot.city}/
+          %br/
+          %label{:for => "city"} City
+        .input-field.col.s12.m6.l6
+          %input#state{:name => "robot[state]", :type => "text", :value => @robot.state}/
+          %br/
+          %label{:for => "state"} State
+      .row
+        .input-field.col.s12.m12.l12
+          %input#avatar{:name => "robot[avatar]", :type => "text", :value => @robot.avatar}/
+          %br/
+          %label{:for => "avatar"} Avatar URL
+      .row
+        .input-field.col.s12.m6.l6.grey-text
+          Birthdate:
+          %input#birthdate{:name => "robot[birthdate]", :type => "date", :value => @robot.birthdate}/
+          %br/
+        .input-field.col.s12.m6.l6.grey-text
+          Date Hired:
+          %input#hired_on{:name => "robot[hired_on]", :type => "date", :value => @robot.hired_on}/
+          %br/
+      .row
+        .input-field.col.s6.m6.l6
+          Department:
+          - if @robot.department == 'service'
+            %input#Service.radio-btn{:checked => "", :name => "robot[department]", :type => "radio", :value => "service"}
+              Service
+              %input#Transporation.radio-btn{:name => "robot[department]", :type => "radio", :value => "transportation"}
+                Transportation
+          - else
+            %input#Service.radio-btn{:name => "robot[department]", :type => "radio", :value => "service"}
+              Service
+              %input#Transporation.radio-btn{:checked => "", :name => "robot[department]", :type => "radio", :value => "transportation"}
+                Transportation
+      %button.btn.waves-effect.waves-light{:name => "action", :type => "submit", :value => "Submit"}
+        Save Updates
+        %i.material-icons.right send
