@@ -2,3 +2,11 @@
   %header.row
     .col.s12.m12.l12.center-align
       %h1.cyan-text.text-accent-2 Robot Index
+  -@robots.each do |robot|
+    .row
+      .col.s12.m12.l12
+        .card.blue-grey.darken-1
+          .card-content.white-text
+            %p.light-blue-text.text-accent-3 Location:
+          .card-action
+            %p link and form will go here
