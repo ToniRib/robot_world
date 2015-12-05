@@ -19,7 +19,11 @@ class Robot
     @department = data[:department]
   end
 
-  def age
-    # calculate an age here
+  def to_s
+    "Name: #{name}\n
+    Location: #{city}, #{state}\n
+    Birthdate: #{birthdate}\n
+    Hired On: #{hired_on}\n
+    Department: #{department}"
   end
 end

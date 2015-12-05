@@ -17,6 +17,9 @@ class RobotManagerApp < Sinatra::Base
 
   post '/robots' do
     RobotManager.create(params[:robot])
+    id = RobotManager.all.last.id
+    robot = RobotManager.find(id)
+    RobotManager.send_email(robot)
     redirect '/robots'
   end
 

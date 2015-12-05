@@ -59,4 +59,11 @@ class RobotManager
     end
     department_count
   end
+
+  def self.send_email(robot)
+     Pony.mail(to: 'tonimarierib@example.com',
+               from: 'tonimarierib@gmail.com',
+               subject: "Information for #{robot.name}",
+               body: "#{robot.to_s}")
+  end
 end
