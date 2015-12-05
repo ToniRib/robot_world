@@ -1,0 +1,31 @@
+.container
+  %header.row
+    .col.s12.m12.l12.center-align
+      %h1.cyan-text.text-accent-2= @robot.name
+  .row
+    .col.s12.m12.l6.center-align
+      .card.blue-grey.darken-1
+        #robot-info.card-content.white-text
+          %h4
+            %b Location:
+            %em
+              = @robot.city
+              , #{@robot.state}
+          %h4
+            %b Birthdate:
+            %em= @robot.birthdate
+          %h4
+            %b Hired On:
+            %em= @robot.hired_on
+          %h4
+            %b Department:
+            %em= @robot.department
+        .card-action
+          %a.cyan-text.text-accent-2{:href => "/robots/#{@robot.id}/edit"} Edit Robot
+          %form.inline-form{:action => "/robots/#{@robot.id}", :method => "POST"}
+            %input{:name => "_method", :type => "hidden", :value => "DELETE"}/
+            %input.hover-submit.btn-flat.cyan-text.text-accent-2{:type => "submit", :value => "delete"}/
+    .col.s12.m12.l6
+      .card.blue-grey.darken-1
+        #robot-img.card-content.white-text.center-align
+          %img{:alt => "robot", :src => @robot.avatar}/
