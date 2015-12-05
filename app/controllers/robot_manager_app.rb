@@ -8,7 +8,7 @@ class RobotManagerApp < Sinatra::Base
 
   get '/robots' do
     @robots = RobotManager.all
-    erb :index
+    haml :index
   end
 
   get '/robots/new' do

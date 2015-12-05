@@ -11,6 +11,8 @@ GEM
     chartkick (1.4.1)
     coderay (1.1.0)
     database_cleaner (1.5.1)
+    haml (4.0.7)
+      tilt
     launchy (2.4.3)
       addressable (~> 2.3)
     method_source (0.8.2)
@@ -51,6 +53,7 @@ DEPENDENCIES
   capybara
   chartkick
   database_cleaner
+  haml
   launchy
   minitest
   pry
