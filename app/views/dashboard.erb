@@ -39,11 +39,10 @@
     <section class="col s12 m4 l4">
       <div class="card">
         <div class="card-image">
-          <img src="/images/color_wash.JPG">
-          <span class="card-title">Average Robot Age</span>
+          <%= column_chart RobotManager.sort_by_department, height: "400px", library: {backgroundColor: "#000"} %>
         </div>
         <div class="card-content cyan darken-3">
-          <p class="white-text">Age here</p>
+          <p class="white-text">Robots by Department</p>
         </div>
       </div>
     </section>

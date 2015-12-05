@@ -51,4 +51,12 @@ class RobotManager
     end
     year_count
   end
+
+  def self.sort_by_department
+    department_count = {}
+    all.group_by { |robot| robot.department }.each do |i|
+      department_count[i[0]] = i[1].count
+    end
+    department_count
+  end
 end
