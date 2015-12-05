@@ -35,4 +35,20 @@ class RobotManager
   def self.delete(id)
     database.from(:robots).where(id: id).delete
   end
+
+  def self.sort_by_location
+    location_count = {}
+    all.group_by { |robot| robot.city }.each do |i|
+      location_count[i[0]] = i[1].count
+    end
+    location_count
+  end
+
+  def self.sort_by_year
+    year_count = {}
+    all.group_by { |robot| robot.hired_on[0..3] }.each do |i|
+      year_count[i[0]] = i[1].count
+    end
+    year_count
+  end
 end
