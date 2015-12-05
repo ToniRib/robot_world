@@ -12,7 +12,7 @@ class RobotManagerApp < Sinatra::Base
   end
 
   get '/robots/new' do
-    erb :new
+    haml :new
   end
 
   post '/robots' do
