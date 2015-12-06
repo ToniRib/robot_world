@@ -37,26 +37,20 @@ class RobotManager
   end
 
   def self.sort_by_location
-    location_count = {}
-    all.group_by { |robot| robot.city }.each do |i|
-      location_count[i[0]] = i[1].count
-    end
-    location_count
+    all.group_by { |robot| robot.city }.map do |set|
+      [set[0], set[1].count]
+    end.to_h
   end
 
   def self.sort_by_year
-    year_count = {}
-    all.group_by { |robot| robot.hired_on[0..3] }.each do |i|
-      year_count[i[0]] = i[1].count
-    end
-    year_count
+    all.group_by { |robot| robot.hired_on[0..3] }.map do |set|
+      [set[0], set[1].count]
+    end.to_h
   end
 
   def self.sort_by_department
-    department_count = {}
-    all.group_by { |robot| robot.department }.each do |i|
-      department_count[i[0]] = i[1].count
-    end
-    department_count
+    all.group_by { |robot| robot.department }.map do |set|
+      [set[0], set[1].count]
+    end.to_h
   end
 end
