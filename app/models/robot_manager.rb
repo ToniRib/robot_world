@@ -37,9 +37,9 @@ class RobotManager
   end
 
   def self.sort_by_location
-    all.group_by { |robot| robot.city }.map do |set|
-      [set[0], set[1].count]
-    end.to_h
+    database.from(:robots).group_and_count(:state).to_a.map do |item|
+      [item[:state], item[:count]]
+    end
   end
 
   def self.sort_by_year
@@ -49,8 +49,8 @@ class RobotManager
   end
 
   def self.sort_by_department
-    all.group_by { |robot| robot.department }.map do |set|
-      [set[0], set[1].count]
-    end.to_h
+    database.from(:robots).group_and_count(:department).to_a.map do |item|
+      [item[:department], item[:count]]
+    end
   end
 end
